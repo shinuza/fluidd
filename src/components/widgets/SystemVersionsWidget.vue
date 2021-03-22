@@ -43,7 +43,7 @@
     </template>
 
     <v-list-item @click="forceCheck()" :disabled="printerPrinting">
-      <v-list-item-title>{{ $t('Check for updates') }}</v-list-item-title>
+      <v-list-item-title class="text-wrap">{{ $t('Check for updates') }}</v-list-item-title>
       <v-list-item-icon>
         <v-icon :class="{ 'spin-alt': isRefreshing }">$refresh</v-icon>
       </v-list-item-icon>

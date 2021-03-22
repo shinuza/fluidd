@@ -177,6 +177,8 @@
   "Remove All": "Tout supprimer",
   "Are you sure? This will clear all history, and printer statistics.": "Êtes vous sûr(e) ? Toute l'historique et les statistiques de l'imprimante seront éffacées .",
   "Are you sure?": "Êtes vous sur(e)?",
+  "Are you sure? This will reboot your host system.": "Êtes vous sûr(e) ? Votre système hôte va redémarrer",
+  "Are you sure? This will shutdown your host system.": "Êtes vous sûr(e) ? Votre système hôte va s'éteindre",
   "Config Reference": "Référence pour la configuration",
   "Saved!": "Enregistré!",
   "General": "Général",
@@ -239,5 +241,6 @@
   "Started": "Démarrée",
   "status": "statut",
   "ip camera": "Caméra ip",
-  "mjpgstreamer": "mjpgstreamer"
+  "mjpgstreamer": "mjpgstreamer",
+  "Printer Configuration": "Configuration"
 }

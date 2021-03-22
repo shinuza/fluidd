@@ -138,7 +138,7 @@ export default class SystemCommandsWidget extends Mixins(StateMixin, ServicesMix
   }
 
   handleHostReboot () {
-    this.$confirm('Are you sure? This will reboot your host system.')
+    this.$confirm(this.$t('Are you sure? This will reboot your host system.').toString())
       .then(res => {
         if (res) {
           this.$emit('click')
@@ -148,7 +148,7 @@ export default class SystemCommandsWidget extends Mixins(StateMixin, ServicesMix
   }
 
   handleHostShutdown () {
-    this.$confirm('Are you sure? This will shutdown your host system.')
+    this.$confirm(this.$t('Are you sure? This will shutdown your host system.').toString())
       .then(res => {
         if (res) {
           this.$emit('click')

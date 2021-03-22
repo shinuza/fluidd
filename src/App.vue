@@ -33,6 +33,7 @@ import { Component, Mixins } from 'vue-property-decorator'
 import EventBus from '@/eventBus'
 import StateMixin from './mixins/state'
 import { FlashMessage as FlashMessageType } from '@/types'
+import { $t } from '@/i18n'
 import AppBar from '@/components/AppBar.vue'
 import AppDrawer from '@/components/AppDrawer.vue'
 import AppFooter from '@/components/AppFooter.vue'
@@ -96,7 +97,7 @@ export default class App extends Mixins(StateMixin) {
 
   get pageTitle () {
     const instanceName = this.$store.state.config.uiSettings.general.instanceName || ''
-    const pageName = this.$route.name
+    const pageName = $t(this.$route.name?.toString()) // Force page title evaluation
 
     if (this.printerPrinting) {
       return `${instanceName} | ${pageName} | [${this.progress}%]`

@@ -198,6 +198,8 @@
   "Remove All": "Remove All",
   "Are you sure? This will clear all history, and printer statistics.": "Are you sure? This will clear all history, and printer statistics.",
   "Are you sure?": "Are you sure?",
+  "Are you sure? This will reboot your host system.": "Are you sure? This will reboot your host system.",
+  "Are you sure? This will shutdown your host system.": "Are you sure? This will shutdown your host system.",
   "Saved!": "Saved!",
   "General": "General",
   "Presets": "Presets",
@@ -239,5 +241,6 @@
   "Filament Used": "Filament Used",
   "Actions": "Actions",
   "ip camera": "ip camera",
-  "mjpgstreamer": "mjpgstreamer"
+  "mjpgstreamer": "mjpgstreamer",
+  "Printer Configuration": "Printer Configuration"
 }

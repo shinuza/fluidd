@@ -27,4 +27,4 @@ export const i18n = new VueI18n({
   messages: loadLocaleMessages()
 })
 
-export const $t = (s: string, replace?: any) => i18n.t(s, replace).toString()
+export const $t = (s: string | undefined, replace?: any) => i18n.t(s || '', replace).toString()
