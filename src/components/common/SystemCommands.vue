@@ -124,10 +124,14 @@ export default class SystemCommands extends Mixins(StateMixin, ServicesMixin) {
   }
 
   handleHostReboot () {
+<<<<<<< HEAD:src/components/common/SystemCommands.vue
     this.$confirm(
       this.$tc('app.general.simple_form.msg.confirm_reboot_host'),
       { title: this.$tc('app.general.label.confirm'), color: 'card-heading', icon: '$error' }
     )
+=======
+    this.$confirm(this.$t('Are you sure? This will reboot your host system.').toString())
+>>>>>>> 2d8ffcd (chore(i18n-missing-translations): Added missing keys):src/components/widgets/SystemCommandsWidget.vue
       .then(res => {
         if (res) {
           this.$emit('click')
@@ -137,10 +141,14 @@ export default class SystemCommands extends Mixins(StateMixin, ServicesMixin) {
   }
 
   handleHostShutdown () {
+<<<<<<< HEAD:src/components/common/SystemCommands.vue
     this.$confirm(
       this.$tc('app.general.simple_form.msg.confirm_shutdown_host'),
       { title: this.$tc('app.general.label.confirm'), color: 'card-heading', icon: '$error' }
     )
+=======
+    this.$confirm(this.$t('Are you sure? This will shutdown your host system.').toString())
+>>>>>>> 2d8ffcd (chore(i18n-missing-translations): Added missing keys):src/components/widgets/SystemCommandsWidget.vue
       .then(res => {
         if (res) {
           this.$emit('click')

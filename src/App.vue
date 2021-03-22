@@ -34,9 +34,31 @@
 import { Component, Mixins } from 'vue-property-decorator'
 import { EventBus, FlashMessage } from '@/eventBus'
 import StateMixin from './mixins/state'
+<<<<<<< HEAD
 import { Waits } from './globals'
 
 @Component({})
+=======
+import { FlashMessage as FlashMessageType } from '@/types'
+import { $t } from '@/i18n'
+import AppBar from '@/components/AppBar.vue'
+import AppDrawer from '@/components/AppDrawer.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import SocketDisconnectedWidget from '@/components/widgets/SocketDisconnectedWidget.vue'
+import FlashMessage from '@/components/FlashMessage.vue'
+import DialogUpdateStatus from '@/components/dialogs/dialogUpdateStatus.vue'
+
+@Component({
+  components: {
+    AppBar,
+    AppDrawer,
+    SocketDisconnectedWidget,
+    FlashMessage,
+    AppFooter,
+    DialogUpdateStatus
+  }
+})
+>>>>>>> 2d8ffcd (chore(i18n-missing-translations): Added missing keys)
 export default class App extends Mixins(StateMixin) {
   drawer = false
   showUpdateUI = false
@@ -61,7 +83,7 @@ export default class App extends Mixins(StateMixin) {
 
   get pageTitle () {
     const instanceName = this.$store.state.config.uiSettings.general.instanceName || ''
-    const pageName = this.$route.name
+    const pageName = $t(this.$route.name?.toString()) // Force page title evaluation
 
     if (this.printerPrinting) {
       return `${instanceName} | ${pageName} | [${this.progress}%]`
