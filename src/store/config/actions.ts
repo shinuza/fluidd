@@ -37,6 +37,17 @@ export const actions: ActionTree<ConfigState, RootState> = {
   },
 
   /**
+   * Sets, and saves a job preview size change.
+   */
+  async onJobPreviewSizeChange ({ dispatch, state }, payload: string) {
+    dispatch('saveByPath', {
+      path: 'uiSettings.general.jobPreviewSize',
+      value: payload,
+      server: true
+    })
+  },
+
+  /**
    * Sets, and saves a locale change.
    */
   async onLocaleChange ({ dispatch, state }, payload: string) {

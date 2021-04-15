@@ -49,7 +49,7 @@
               v-if="item.thumbnails && item.thumbnails.length"
               class="file-icon-thumb"
               :src="getThumbUrl(item.thumbnails, item.path)"
-              :width="(dense) ? 16 : 24"
+              :width="(dense) ? 16 : jobPreviewSize"
             />
           </td>
 
@@ -203,6 +203,17 @@ export default class FileSystemBrowser extends Mixins(FilesMixin) {
       this.$store.getters['server/componentSupport']('history') &&
       this.root === 'gcodes'
     )
+  }
+
+  get jobPreviewSize () {
+    const size = this.$store.state.config.uiSettings.general.jobPreviewSize
+    if (size === 'big') {
+      return 100
+    }
+    if (size === 'bigger') {
+      return 200
+    }
+    return 24
   }
 
   // Table row is being dragged

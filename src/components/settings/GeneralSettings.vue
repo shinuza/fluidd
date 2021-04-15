@@ -38,6 +38,20 @@
 
       <v-divider></v-divider>
 
+      <app-setting title="Job Preview Size">
+        <v-select
+          filled
+          dense
+          single-line
+          hide-details="auto"
+          :items="supportedJobPreviewSizes"
+          :value="jobPreviewSize"
+          @change="setJobPreviewSize"
+        ></v-select>
+      </app-setting>
+
+      <v-divider></v-divider>
+
       <app-setting>
         <template v-slot:title>
           <span class="text-wrap">{{ $t('app.setting.label.time_estimates') }}</span>
@@ -98,6 +112,22 @@ export default class GeneralSettings extends Mixins(StateMixin) {
 
   setInstanceName (value: string) {
     if (this.instanceNameElement.valid) this.$store.dispatch('config/updateInstance', value)
+  }
+
+  get jobPreviewSize () {
+    return this.$store.state.config.uiSettings.general.jobPreviewSize
+  }
+
+  get supportedJobPreviewSizes () {
+    return [
+      { text: 'normal', value: 'normal' },
+      { text: 'big', value: 'big' },
+      { text: 'bigger', value: 'bigger' }
+    ]
+  }
+
+  setJobPreviewSize (value: string) {
+    this.$store.dispatch('config/onJobPreviewSizeChange', value)
   }
 
   get locale () {
