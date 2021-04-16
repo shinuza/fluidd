@@ -20,6 +20,21 @@
       </v-toolbar-title>
       <v-spacer />
 
+      <v-tooltip bottom v-if="socketConnected">
+        <template v-slot:activator="{ on, attrs }">
+          <app-btn style="margin-right:10px"
+            :disabled="!klippyReady"
+            icon
+            fab
+            color="error"
+            @click="emergencyStop()"
+            v-bind="attrs"
+            v-on="on">
+            <v-icon>$estop</v-icon>
+          </app-btn>
+        </template>
+        {{ $t('app.general.tooltip.estop') }}
+      </v-tooltip>
       <app-btn text to="/" color="" class="d-none d-md-flex mx-1">
         <v-icon small class="mr-md-1">$home</v-icon>
         <span>{{ $t('app.general.title.home') }}</span>
@@ -36,20 +51,6 @@
         <v-icon small class="mr-md-1">$cogs</v-icon>
         <span>{{ $t('app.general.title.configure') }}</span>
       </app-btn>
-      <v-tooltip bottom v-if="socketConnected">
-        <template v-slot:activator="{ on, attrs }">
-          <app-btn
-            :disabled="!klippyReady"
-            icon
-            color="error"
-            @click="emergencyStop()"
-            v-bind="attrs"
-            v-on="on">
-            <v-icon>$estop</v-icon>
-          </app-btn>
-        </template>
-        {{ $t('app.general.tooltip.estop') }}
-      </v-tooltip>
 
       <v-badge
         :value="hasUpdates"

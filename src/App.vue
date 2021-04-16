@@ -21,6 +21,19 @@
     />
 
     <v-main>
+          <v-fab-transition>
+      <v-btn
+        fab
+        large
+        color="red"
+        dark
+        bottom
+        left
+        class="v-btn--example"
+      >
+        <v-icon>$estop</v-icon>
+      </v-btn>
+    </v-fab-transition>
       <router-view v-if="socketConnected" />
       <socket-disconnected v-if="!socketConnected"></socket-disconnected>
       <updating-dialog></updating-dialog>
