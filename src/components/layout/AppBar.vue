@@ -20,7 +20,7 @@
       </v-toolbar-title>
       <v-spacer />
 
-      <v-tooltip bottom v-if="socketConnected">
+      <!-- <v-tooltip bottom v-if="socketConnected">
         <template v-slot:activator="{ on, attrs }">
           <app-btn style="margin-right:10px"
             :disabled="!klippyReady"
@@ -34,7 +34,7 @@
           </app-btn>
         </template>
         {{ $t('app.general.tooltip.estop') }}
-      </v-tooltip>
+      </v-tooltip> -->
       <app-btn text to="/" color="" class="d-none d-md-flex mx-1">
         <v-icon small class="mr-md-1">$home</v-icon>
         <span>{{ $t('app.general.title.home') }}</span>
